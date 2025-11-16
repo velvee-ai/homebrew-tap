@@ -5,13 +5,13 @@
 class Work < Formula
   desc "Work - A CLI tool with git worktree management for parallel branch development"
   homepage "https://github.com/velvee-ai/ai-workflow"
-  version "0.0.13"
+  version "0.0.14"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.13/ai-workflow_0.0.13_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-    sha256 "6ddd523f20efb59a51c16e07e196dad89c63e7b4096ac247656e52680cbefe90"
+    url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.14/ai-workflow_0.0.14_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
+    sha256 "46808afc48740986d4d54a32ecad1766942d238cf9358b8c2205aae1ce99c8ef"
 
     def install
       bin.install "work"
@@ -23,8 +23,8 @@ class Work < Formula
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.13/ai-workflow_0.0.13_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-    sha256 "beadc5404b1a7134d7ef80eb5bcbb24bb5b2f132b56d09ad48680a6b654ed56f"
+    url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.14/ai-workflow_0.0.14_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+    sha256 "e62b4421119be2f8b23a4122fa813d2f76537325507bbbda76173d82aed763ad"
 
     def install
       bin.install "work"
