@@ -5,34 +5,62 @@
 class Work < Formula
   desc "Work - A CLI tool with git worktree management for parallel branch development"
   homepage "https://github.com/velvee-ai/ai-workflow"
-  version "0.0.18"
+  version "0.0.19"
   license "MIT"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.18/ai-workflow_0.0.18_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-    sha256 "3b23de8652dbaeb411d23bf75b3fbb00b66577d914dcac38c1e1b62c41918ad6"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "faa10dca5410b64986bb589871884ca9cfe3f03e4b85da16f70cdf99666d7ab0"
 
-    def install
-      bin.install "work"
+      def install
+        bin.install "work"
 
-      # Generate and install shell completions
-      bash_completion.install "completions/work.bash" => "work"
-      zsh_completion.install "completions/_work"
-      fish_completion.install "completions/work.fish"
+        # Generate and install shell completions
+        bash_completion.install "completions/work.bash" => "work"
+        zsh_completion.install "completions/_work"
+        fish_completion.install "completions/work.fish"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "74089fa9d3a35213583c4b86fac68672179737fa58ee26d1a425261e2b9f9538"
+
+      def install
+        bin.install "work"
+
+        # Generate and install shell completions
+        bash_completion.install "completions/work.bash" => "work"
+        zsh_completion.install "completions/_work"
+        fish_completion.install "completions/work.fish"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.18/ai-workflow_0.0.18_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-    sha256 "05a7482f3578b25a64f2162043a74400bf7bba79791df277f64258033a8653f2"
 
-    def install
-      bin.install "work"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "df743e5fe7be524d8da1f6666f4f733e5445b0cd48866e258ac571fb5487e8b6"
+      def install
+        bin.install "work"
 
-      # Generate and install shell completions
-      bash_completion.install "completions/work.bash" => "work"
-      zsh_completion.install "completions/_work"
-      fish_completion.install "completions/work.fish"
+        # Generate and install shell completions
+        bash_completion.install "completions/work.bash" => "work"
+        zsh_completion.install "completions/_work"
+        fish_completion.install "completions/work.fish"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "2cc2fb6464be44a0d5fc20ddf75b6fe9aace69c6fab694e667c1ebd30bc694f7"
+      def install
+        bin.install "work"
+
+        # Generate and install shell completions
+        bash_completion.install "completions/work.bash" => "work"
+        zsh_completion.install "completions/_work"
+        fish_completion.install "completions/work.fish"
+      end
     end
   end
 
