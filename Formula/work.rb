@@ -5,13 +5,13 @@
 class Work < Formula
   desc "Work - A CLI tool with git worktree management for parallel branch development"
   homepage "https://github.com/velvee-ai/ai-workflow"
-  version "0.0.19"
+  version "0.0.20"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "faa10dca5410b64986bb589871884ca9cfe3f03e4b85da16f70cdf99666d7ab0"
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.20/ai-workflow_0.0.20_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "21a1ba0f1150583f39c9b012510ebf906202ad23b293e838189b756da72ff734"
 
       def install
         bin.install "work"
@@ -23,8 +23,8 @@ class Work < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "74089fa9d3a35213583c4b86fac68672179737fa58ee26d1a425261e2b9f9538"
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.20/ai-workflow_0.0.20_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "bb9db5d9af90a50b39f3b9bdfeef5581c12f6d8cf8667feaa52a3913412c4cbc"
 
       def install
         bin.install "work"
@@ -39,8 +39,8 @@ class Work < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "df743e5fe7be524d8da1f6666f4f733e5445b0cd48866e258ac571fb5487e8b6"
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.20/ai-workflow_0.0.20_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "68108cc37d8c9aee024ec20fa484eff98972b8985f7cecb91363c9b08f6508d2"
       def install
         bin.install "work"
 
@@ -51,8 +51,8 @@ class Work < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.19/ai-workflow_0.0.19_Linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "2cc2fb6464be44a0d5fc20ddf75b6fe9aace69c6fab694e667c1ebd30bc694f7"
+      url "https://github.com/velvee-ai/ai-workflow/releases/download/v0.0.20/ai-workflow_0.0.20_Linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "6941727ace903abadf860246fc232258ee08c0d48594af67c0efcbf871a2394c"
       def install
         bin.install "work"
 
